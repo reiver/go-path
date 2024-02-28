@@ -13,6 +13,16 @@ func ExampleRemoteTrailingSeparators() {
 		"/apple/banana/cherry/",
 		"/apple/banana/cherry//",
 		"/apple/banana/cherry///",
+
+		"/apple/banana/cherry/.",
+		"/apple/banana/cherry/./",
+		"/apple/banana/cherry/.//",
+		"/apple/banana/cherry/.///",
+
+		"/apple/banana/cherry/..",
+		"/apple/banana/cherry/../",
+		"/apple/banana/cherry/..//",
+		"/apple/banana/cherry/..///",
 	}
 
 	for _, p := range paths {
@@ -29,4 +39,12 @@ func ExampleRemoteTrailingSeparators() {
 	// "/apple/banana/cherry/" -> "/apple/banana/cherry"
 	// "/apple/banana/cherry//" -> "/apple/banana/cherry"
 	// "/apple/banana/cherry///" -> "/apple/banana/cherry"
+	// "/apple/banana/cherry/." -> "/apple/banana/cherry/."
+	// "/apple/banana/cherry/./" -> "/apple/banana/cherry/."
+	// "/apple/banana/cherry/.//" -> "/apple/banana/cherry/."
+	// "/apple/banana/cherry/.///" -> "/apple/banana/cherry/."
+	// "/apple/banana/cherry/.." -> "/apple/banana/cherry/.."
+	// "/apple/banana/cherry/../" -> "/apple/banana/cherry/.."
+	// "/apple/banana/cherry/..//" -> "/apple/banana/cherry/.."
+	// "/apple/banana/cherry/..///" -> "/apple/banana/cherry/.."
 }
