@@ -60,6 +60,29 @@ func TestSplit(t *testing.T) {
 			ExpectedDir: "/../../////.././.././something/../wow/here/",
 			ExpectedFile: "it.png",
 		},
+
+
+
+		{
+			Path: "/apple/banana/cherry/",
+			ExpectedDir: "/apple/banana/cherry/",
+			ExpectedFile: "",
+		},
+		{
+			Path: "/apple/banana/cherry",
+			ExpectedDir: "/apple/banana/",
+			ExpectedFile: "cherry",
+		},
+		{
+			Path: "apple/banana/cherry/",
+			ExpectedDir: "apple/banana/cherry/",
+			ExpectedFile: "",
+		},
+		{
+			Path: "apple/banana/cherry",
+			ExpectedDir: "apple/banana/",
+			ExpectedFile: "cherry",
+		},
 	}
 
 	for testNumber, test := range tests {
