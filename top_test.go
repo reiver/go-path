@@ -27,6 +27,20 @@ func TestTop(t *testing.T) {
 
 
 		{
+			Path: ".",
+			Expected: ".",
+		},
+
+
+
+		{
+			Path: "..",
+			Expected: "..",
+		},
+
+
+
+		{
 			Path: "/apple",
 			Expected: "/",
 		},
@@ -193,6 +207,44 @@ func TestTop(t *testing.T) {
 		{
 			Path: "/../../../../something/",
 			Expected: "/",
+		},
+
+
+
+		{
+			Path: "../",
+			Expected: "..",
+		},
+		{
+			Path: "../../",
+			Expected: "..",
+		},
+		{
+			Path: "../../../",
+			Expected: "..",
+		},
+		{
+			Path: "../../../../",
+			Expected: "..",
+		},
+
+
+
+		{
+			Path: "../something",
+			Expected: "..",
+		},
+		{
+			Path: "../../something",
+			Expected: "..",
+		},
+		{
+			Path: "../../../something",
+			Expected: "..",
+		},
+		{
+			Path: "../../../../something",
+			Expected: "..",
 		},
 	}
 
