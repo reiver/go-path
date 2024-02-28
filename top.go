@@ -6,17 +6,14 @@ import (
 
 // Top returns the top of a path.
 func Top(path string) string {
-	var length int = len(path)
 
-	for 2 <= length && '.' == path[0] && '/' == path[1] {
+	for 2 <= len(path) && '.' == path[0] && '/' == path[1] {
 		path = path[2:]
 	}
 
 	switch {
-	case length <= 0:
+	case "" == path:
 		return "."
-	case 1 == length:
-		return path
 	case '/' == path[0]:
 		return "/"
 	default:
