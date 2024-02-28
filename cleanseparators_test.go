@@ -131,6 +131,60 @@ func TestCleanSeparators(t *testing.T) {
 			Path: "/one/two//three///four////",
 			Expected: "/one/two/three/four/",
 		},
+
+
+
+		{
+			Path: "apple////banana///cherry//",
+			Expected: "apple/banana/cherry/",
+		},
+		{
+			Path: "/apple////banana///cherry//",
+			Expected: "/apple/banana/cherry/",
+		},
+		{
+			Path: "//apple////banana///cherry//",
+			Expected: "/apple/banana/cherry/",
+		},
+		{
+			Path: "///apple////banana///cherry//",
+			Expected: "/apple/banana/cherry/",
+		},
+		{
+			Path: "////apple////banana///cherry//",
+			Expected: "/apple/banana/cherry/",
+		},
+		{
+			Path: "/////apple////banana///cherry//",
+			Expected: "/apple/banana/cherry/",
+		},
+
+
+
+		{
+			Path: "apple////banana///cherry",
+			Expected: "apple/banana/cherry",
+		},
+		{
+			Path: "/apple////banana///cherry",
+			Expected: "/apple/banana/cherry",
+		},
+		{
+			Path: "//apple////banana///cherry",
+			Expected: "/apple/banana/cherry",
+		},
+		{
+			Path: "///apple////banana///cherry",
+			Expected: "/apple/banana/cherry",
+		},
+		{
+			Path: "////apple////banana///cherry",
+			Expected: "/apple/banana/cherry",
+		},
+		{
+			Path: "/////apple////banana///cherry",
+			Expected: "/apple/banana/cherry",
+		},
 	}
 
 	for testNumber, test := range tests {
