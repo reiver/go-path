@@ -40,7 +40,7 @@ func ExampleTop() {
 
 	// Output:
 	//
-	// the 'top' of the path "" is ""
+	// the 'top' of the path "" is "."
 	// the 'top' of the path "/" is "/"
 	// the 'top' of the path "/doc.txt" is "/"
 	// the 'top' of the path "doc.txt" is "doc.txt"

@@ -50,9 +50,13 @@ import (
 func Top(path string) string {
 	var length int = len(path)
 
+	for 2 <= length && '.' == path[0] && '/' == path[1] {
+		path = path[2:]
+	}
+
 	switch {
 	case length <= 0:
-		return ""
+		return "."
 	case 1 == length:
 		return path
 	case '/' == path[0]:

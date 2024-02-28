@@ -14,7 +14,7 @@ func TestTop(t *testing.T) {
 	}{
 		{
 			Path: "",
-			Expected: "",
+			Expected: ".",
 		},
 
 
@@ -123,6 +123,32 @@ func TestTop(t *testing.T) {
 		{
 			Path: "path/to/archive.tar.gz",
 			Expected: "path",
+		},
+
+
+
+		{
+			Path: "/////some/path/to/a/file.html",
+			Expected: "/",
+		},
+
+
+
+		{
+			Path: "./some/path/to/a/file.html",
+			Expected: "some",
+		},
+		{
+			Path: "././some/path/to/a/file.html",
+			Expected: "some",
+		},
+		{
+			Path: "./././some/path/to/a/file.html",
+			Expected: "some",
+		},
+		{
+			Path: "././././some/path/to/a/file.html",
+			Expected: "some",
 		},
 	}
 
