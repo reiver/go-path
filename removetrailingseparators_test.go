@@ -6,7 +6,7 @@ import (
 	"github.com/reiver/go-path"
 )
 
-func TestRemoveTrailingSlash(t *testing.T) {
+func TestRemoveTrailingSeparators(t *testing.T) {
 
 	tests := []struct{
 		Path string
@@ -204,7 +204,7 @@ func TestRemoveTrailingSlash(t *testing.T) {
 
 	for testNumber, test := range tests {
 
-		actual := path.RemoveTrailingSlash(test.Path)
+		actual := path.RemoveTrailingSeparators(test.Path)
 
 		expected := test.Expected
 

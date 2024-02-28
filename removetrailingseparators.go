@@ -1,7 +1,7 @@
 package path
 
-// RemoveTrailingSlash returns the path with any trailing slashes removed.
-func RemoveTrailingSlash(path string) string {
+// RemoveTrailingSeparators returns the path with any trailing separator characters removed.
+func RemoveTrailingSeparators(path string) string {
 	if "" == path  {
 		return ""
 	}

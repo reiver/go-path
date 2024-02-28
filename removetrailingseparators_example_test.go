@@ -6,7 +6,7 @@ import (
 	"github.com/reiver/go-path"
 )
 
-func ExampleRemoteTrailingSlash() {
+func ExampleRemoteTrailingSeparators() {
 
 	var paths []string = []string{
 		"/apple/banana/cherry",
@@ -17,12 +17,11 @@ func ExampleRemoteTrailingSlash() {
 
 	for _, p := range paths {
 
-		var result string = path.RemoveTrailingSlash(p)
+		var result string = path.RemoveTrailingSeparators(p)
 
 		fmt.Printf("%q -> %q\n", p, result)
 
 	}
-
 
 	// Output:
 	//
