@@ -131,6 +131,75 @@ func TestRemoveTrailingSlash(t *testing.T) {
 			Path: "/one/two//three///",
 			Expected: "/one/two//three",
 		},
+
+
+
+		{
+			Path: "/////apple////banana///cherry//date",
+			Expected: "/////apple////banana///cherry//date",
+		},
+		{
+			Path: "/////apple////banana///cherry//date/",
+			Expected: "/////apple////banana///cherry//date",
+		},
+		{
+			Path: "/////apple////banana///cherry//date//",
+			Expected: "/////apple////banana///cherry//date",
+		},
+		{
+			Path: "/////apple////banana///cherry//date///",
+			Expected: "/////apple////banana///cherry//date",
+		},
+		{
+			Path: "/////apple////banana///cherry//date////",
+			Expected: "/////apple////banana///cherry//date",
+		},
+
+
+
+		{
+			Path: "/////apple////banana///cherry//date/.",
+			Expected: "/////apple////banana///cherry//date/.",
+		},
+		{
+			Path: "/////apple////banana///cherry//date/./",
+			Expected: "/////apple////banana///cherry//date/.",
+		},
+		{
+			Path: "/////apple////banana///cherry//date/.//",
+			Expected: "/////apple////banana///cherry//date/.",
+		},
+		{
+			Path: "/////apple////banana///cherry//date/.///",
+			Expected: "/////apple////banana///cherry//date/.",
+		},
+		{
+			Path: "/////apple////banana///cherry//date/.////",
+			Expected: "/////apple////banana///cherry//date/.",
+		},
+
+
+
+		{
+			Path: "/////apple////banana///cherry//date/..",
+			Expected: "/////apple////banana///cherry//date/..",
+		},
+		{
+			Path: "/////apple////banana///cherry//date/../",
+			Expected: "/////apple////banana///cherry//date/..",
+		},
+		{
+			Path: "/////apple////banana///cherry//date/..//",
+			Expected: "/////apple////banana///cherry//date/..",
+		},
+		{
+			Path: "/////apple////banana///cherry//date/..///",
+			Expected: "/////apple////banana///cherry//date/..",
+		},
+		{
+			Path: "/////apple////banana///cherry//date/..////",
+			Expected: "/////apple////banana///cherry//date/..",
+		},
 	}
 
 	for testNumber, test := range tests {
