@@ -209,6 +209,81 @@ func TestCleanCurrentDirs(t *testing.T) {
 			Path: "once/twice/thrice/fource/.",
 			Expected: "once/twice/thrice/fource/",
 		},
+
+
+
+		{
+			Path: "/apple/banana/cherry/./date/",
+			Expected: "/apple/banana/cherry/date/",
+		},
+		{
+			Path: "/apple/banana/cherry/././date/",
+			Expected: "/apple/banana/cherry/date/",
+		},
+		{
+			Path: "/apple/banana/cherry/./././date/",
+			Expected: "/apple/banana/cherry/date/",
+		},
+		{
+			Path: "/apple/banana/cherry/././././date/",
+			Expected: "/apple/banana/cherry/date/",
+		},
+
+
+
+		{
+			Path: "/apple/banana/cherry/./date",
+			Expected: "/apple/banana/cherry/date",
+		},
+		{
+			Path: "/apple/banana/cherry/././date",
+			Expected: "/apple/banana/cherry/date",
+		},
+		{
+			Path: "/apple/banana/cherry/./././date",
+			Expected: "/apple/banana/cherry/date",
+		},
+		{
+			Path: "/apple/banana/cherry/././././date",
+			Expected: "/apple/banana/cherry/date",
+		},
+
+
+
+		{
+			Path: "apple/banana/cherry/./date/",
+			Expected: "apple/banana/cherry/date/",
+		},
+		{
+			Path: "apple/banana/cherry/././date/",
+			Expected: "apple/banana/cherry/date/",
+		},
+		{
+			Path: "apple/banana/cherry/./././date/",
+			Expected: "apple/banana/cherry/date/",
+		},
+		{
+			Path: "apple/banana/cherry/././././date/",
+			Expected: "apple/banana/cherry/date/",
+		},
+
+
+		{
+			Path: "apple/banana/cherry/./date",
+			Expected: "apple/banana/cherry/date",
+		},
+		{
+			Path: "apple/banana/cherry/././date",
+			Expected: "apple/banana/cherry/date",
+		},
+		{
+			Path: "apple/banana/cherry/./././date",
+			Expected: "apple/banana/cherry/date",
+		},
+		{
+			Path: "apple/banana/cherry/././././date",
+			Expected: "apple/banana/cherry/date",
+		},
 	}
 
 	for testNumber, test := range  tests {
