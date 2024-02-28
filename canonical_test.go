@@ -27,11 +27,127 @@ func TestCanonical(t *testing.T) {
 
 
 		{
+			Path: "/.",
+			Expected: "/",
+		},
+		{
+			Path: "/./",
+			Expected: "/",
+		},
+		{
+			Path: "/./.",
+			Expected: "/",
+		},
+		{
+			Path: "/././",
+			Expected: "/",
+		},
+		{
+			Path: "/././.",
+			Expected: "/",
+		},
+		{
+			Path: "/./././",
+			Expected: "/",
+		},
+		{
+			Path: "/./././.",
+			Expected: "/",
+		},
+		{
+			Path: "/././././",
+			Expected: "/",
+		},
+
+
+
+		{
+			Path: "/..",
+			Expected: "/",
+		},
+		{
+			Path: "/../",
+			Expected: "/",
+		},
+		{
+			Path: "/../..",
+			Expected: "/",
+		},
+		{
+			Path: "/../../",
+			Expected: "/",
+		},
+		{
+			Path: "/../../..",
+			Expected: "/",
+		},
+		{
+			Path: "/../../../",
+			Expected: "/",
+		},
+		{
+			Path: "/../../../..",
+			Expected: "/",
+		},
+		{
+			Path: "/../../../../",
+			Expected: "/",
+		},
+
+
+
+		{
+			Path: "//",
+			Expected: "/",
+		},
+		{
+			Path: "///",
+			Expected: "/",
+		},
+		{
+			Path: "////",
+			Expected: "/",
+		},
+		{
+			Path: "/////",
+			Expected: "/",
+		},
+
+
+
+		{
 			Path: ".",
 			Expected: ".",
 		},
 		{
 			Path: "./",
+			Expected: ".",
+		},
+
+
+
+		{
+			Path: "./.",
+			Expected: ".",
+		},
+		{
+			Path: "././",
+			Expected: ".",
+		},
+		{
+			Path: "././.",
+			Expected: ".",
+		},
+		{
+			Path: "./././",
+			Expected: ".",
+		},
+		{
+			Path: "./././.",
+			Expected: ".",
+		},
+		{
+			Path: "././././",
 			Expected: ".",
 		},
 
@@ -146,6 +262,190 @@ func TestCanonical(t *testing.T) {
 		{
 			Path: "/../../..////./././../something/././/..///./wow/././pow/./.",
 			Expected: "/wow/pow/",
+		},
+
+
+
+		{
+			Path: "////../../..//../../home//username/",
+			Expected: "/home/username/",
+		},
+		{
+			Path: "////../../..//../../home//username",
+			Expected: "/home/username",
+		},
+
+
+
+		{
+			Path: "/apple",
+			Expected: "/apple",
+		},
+		{
+			Path: "/banana",
+			Expected: "/banana",
+		},
+		{
+			Path: "/cherry",
+			Expected: "/cherry",
+		},
+
+		{
+			Path: "apple",
+			Expected: "apple",
+		},
+		{
+			Path: "banana",
+			Expected: "banana",
+		},
+		{
+			Path: "cherry",
+			Expected: "cherry",
+		},
+
+
+
+		{
+			Path: "/once",
+			Expected: "/once",
+		},
+		{
+			Path: "/once/",
+			Expected: "/once/",
+		},
+		{
+			Path: "/once/twice",
+			Expected: "/once/twice",
+		},
+		{
+			Path: "/once/twice/",
+			Expected: "/once/twice/",
+		},
+		{
+			Path: "/once/twice/thrice",
+			Expected: "/once/twice/thrice",
+		},
+		{
+			Path: "/once/twice/thrice/",
+			Expected: "/once/twice/thrice/",
+		},
+		{
+			Path: "/once/twice/thrice/fource",
+			Expected: "/once/twice/thrice/fource",
+		},
+		{
+			Path: "/once/twice/thrice/fource/",
+			Expected: "/once/twice/thrice/fource/",
+		},
+
+
+
+
+		{
+			Path: "once",
+			Expected: "once",
+		},
+		{
+			Path: "once/",
+			Expected: "once/",
+		},
+		{
+			Path: "once/twice",
+			Expected: "once/twice",
+		},
+		{
+			Path: "once/twice/",
+			Expected: "once/twice/",
+		},
+		{
+			Path: "once/twice/thrice",
+			Expected: "once/twice/thrice",
+		},
+		{
+			Path: "once/twice/thrice/",
+			Expected: "once/twice/thrice/",
+		},
+		{
+			Path: "once/twice/thrice/fource",
+			Expected: "once/twice/thrice/fource",
+		},
+		{
+			Path: "once/twice/thrice/fource/",
+			Expected: "once/twice/thrice/fource/",
+		},
+
+
+
+		{
+			Path: "/dragonball.jpeg/",
+			Expected: "/dragonball.jpeg/",
+		},
+		{
+			Path: "/dragonball.jpeg",
+			Expected: "/dragonball.jpeg",
+		},
+		{
+			Path: "/dragonball.jpeg/picollo/",
+			Expected: "/dragonball.jpeg/picollo/",
+		},
+		{
+			Path: "/dragonball.jpeg/picollo",
+			Expected: "/dragonball.jpeg/picollo",
+		},
+		{
+			Path: "/dragonball.jpeg/picollo/dodge/",
+			Expected: "/dragonball.jpeg/picollo/dodge/",
+		},
+		{
+			Path: "/dragonball.jpeg/picollo/dodge",
+			Expected: "/dragonball.jpeg/picollo/dodge",
+		},
+
+		{
+			Path: "dragonball.jpeg/",
+			Expected: "dragonball.jpeg/",
+		},
+		{
+			Path: "dragonball.jpeg",
+			Expected: "dragonball.jpeg",
+		},
+		{
+			Path: "dragonball.jpeg/picollo/",
+			Expected: "dragonball.jpeg/picollo/",
+		},
+		{
+			Path: "dragonball.jpeg/picollo",
+			Expected: "dragonball.jpeg/picollo",
+		},
+		{
+			Path: "dragonball.jpeg/picollo/dodge/",
+			Expected: "dragonball.jpeg/picollo/dodge/",
+		},
+		{
+			Path: "dragonball.jpeg/picollo/dodge",
+			Expected: "dragonball.jpeg/picollo/dodge",
+		},
+
+
+
+		{
+			Path: "/one/😈/three.txt",
+			Expected: "/one/😈/three.txt",
+		},
+		{
+			Path: "one/😈/three.txt",
+			Expected: "one/😈/three.txt",
+		},
+
+
+
+		{
+			Path: "/path/to/archive.tar.gz",
+			Expected: "/path/to/archive.tar.gz",
+		},
+		{
+			Path: "path/to/archive.tar.gz",
+			Expected: "path/to/archive.tar.gz",
 		},
 	}
 
