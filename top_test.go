@@ -150,6 +150,50 @@ func TestTop(t *testing.T) {
 			Path: "././././some/path/to/a/file.html",
 			Expected: "some",
 		},
+
+
+
+		{
+			Path: "/something",
+			Expected: "/",
+		},
+		{
+			Path: "/../something",
+			Expected: "/",
+		},
+		{
+			Path: "/../../something",
+			Expected: "/",
+		},
+		{
+			Path: "/../../../something",
+			Expected: "/",
+		},
+		{
+			Path: "/../../../../something",
+			Expected: "/",
+		},
+
+		{
+			Path: "/something/",
+			Expected: "/",
+		},
+		{
+			Path: "/../something/",
+			Expected: "/",
+		},
+		{
+			Path: "/../../something/",
+			Expected: "/",
+		},
+		{
+			Path: "/../../../something/",
+			Expected: "/",
+		},
+		{
+			Path: "/../../../../something/",
+			Expected: "/",
+		},
 	}
 
 	for testNumber, test := range  tests {
